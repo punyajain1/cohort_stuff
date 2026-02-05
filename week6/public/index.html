@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>
+            AUTH WEB SITE
+        </title>
+    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+
+    <script>
+        async function signup(){
+            const username = document.getElementById("sup-username").value;
+            const password = document.getElementById("sup-password").value;
+
+            await axios.post("http://localhost:3000/signup",{
+                username : username,
+                password : password
+            })
+            alert("you have signed in!!!");
+        }
+
+        async function signin(){
+            const username = document.getElementById("sin-username").value;
+            const password = document.getElementById("sin-password").value;
+
+            const response = await axios.post("http://localhost:3000/signin",{
+                username : username,
+                password : password
+            })
+
+
+            localStorage.setItem("token",response.data.token);
+            alert("you have signed in!!!");
+        }
+        
+        async function getuserinfo() {
+            try {
+                const response = await axios.get("http://localhost:3000/me", {
+                    headers:{
+                        Authorization: localStorage.getItem("token")
+                    }
+                });
+                document.getElementById("userinfo").innerHTML = "Username: " + response.data.username;
+            } catch (error) {
+                alert("Failed to fetch user info. Make sure you're signed in.");
+            }
+        }
+
+
+        getuserinfo();
+    </script>   
+
+    <body>
+        <div>
+            Signup
+            <input id="sup-username" type="text" name= "username" placeholder="username">
+            <input id="sup-password" type="password" name= "password" placeholder="password">
+            <button onclick="signup()">SUBMIT</button>
+        </div>
+
+
+        <div>
+            signin
+            <input id="sin-username" type="text" name= "username" placeholder="username">
+            <input id="sin-password" type="password" name= "password" placeholder="password">
+            <button onclick="signin()">SUBMIT</button>
+        </div>
+
+        <div>
+            user information
+            <div id="userinfo"></div>
+        </div>
+
+
+        <div>
+            <button onclick="logout()"></button>
+        </div>
+    </body> 
+
+
+</html>

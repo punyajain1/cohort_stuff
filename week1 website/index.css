@@ -1,0 +1,116 @@
+body{
+    background-color: #0e0e0e;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.topbar{
+    max-width: 1200px;
+    color: white;
+    margin: 0 auto;
+    padding-top: 10px;
+    display: flex; justify-content: space-between;
+}
+.left{
+    display: flex;
+}
+
+
+.topLink{
+    color: gray;
+    cursor: pointer;
+    padding-left: 24px;
+    text-decoration: none;
+}
+.topLink:hover{
+    color: white;
+}
+.searchinput{
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255, 0.2);
+    padding: 8px;
+    font-size: 16px;
+    background-color: black;
+}
+
+.down{
+    background-color: rgb(36, 141, 254); 
+    width: 100;
+    height: 30;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.ve{
+    display: flex; justify-content: center;
+    margin-top: 40;
+}
+.vers{
+   color: rgb(37, 153, 248);
+}
+
+
+
+
+.freebuild{
+
+    border:thin;
+    background-color: rgb(28, 28, 28);
+    color: rgb(171, 171, 171);
+    margin-left: 150;
+    margin-right: 960;
+    padding-left: 10;
+    border-radius: 50px;
+    height: 30;
+    padding-top: 8px;
+}
+.front1{
+    border: thick;
+    border-style: solid;
+    border-color: #0e0e0e;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.downloadbutton{
+    background-color: rgb(36, 141, 254); 
+    width: 200;height: 50;
+    color: white;
+    font-size: 17;
+    border-radius: 5px;
+    border-color: rgb(36, 141, 254);
+    cursor: pointer;
+}
+.wio{
+    color: rgb(37, 153, 248);
+    cursor: pointer;
+}
+
+
+
+.codewithany{
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+.grid1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-inline: 1.5rem;
+    align-items: center;
+
+    
+}
+.grname{
+    padding-bottom: 10px;
+    color: rgb(155, 163, 180);
+}
+.grid1 img{
+    
+    height: 40px;
+    width: auto;
+}
